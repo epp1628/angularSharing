@@ -1,0 +1,17 @@
+<!-- The article view -->
+<section data-ng-controller="CompaniesController" data-ng-init="findOne()">
+    <h1 data-ng-bind="company.company_name"></h1>
+    <!-- Show the editing buttons to the company creator -->
+    <div>
+        <a href="/#!/companies/{{company._id}}/edit">edit</a>
+        <a href="#" data-ng-click="delete();">delete</a>
+    </div>
+    <small>
+        <em>Posted on</em>
+        <em data-ng-bind="company.created | date:'mediumDate'"></em>
+        <em>by</em>
+        <em data-ng-bind="company.creator.fullName"></em>
+    </small>
+</section>
+
+<!--<div data-ng-show="authentication.user._id == company.creator._id">-->

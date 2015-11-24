@@ -1,0 +1,18 @@
+<!-- The list articles view -->
+<section data-ng-controller="CompaniesController" data-ng-init="find()">
+	<h1>Companies</h1>
+	<ul>
+		<!-- The list of company -->
+		<li data-ng-repeat="company in companies">
+			<a data-ng-href="#!/companies/{{company._id}}" data-ng-bind="company.company_name"></a>
+			<br>
+			<small data-ng-bind="company.created | date:'medium'"></small>
+			<small>/</small>
+			<small data-ng-bind="company.creator.fullName"></small>
+		</li>
+	</ul>
+	<!-- If there are no companies in the list, suggest the user's create a new company -->
+	<div data-ng-hide="!companies || companies.length">
+		No companies yet, why don't you <a href="/#!/companies/create">create one</a>?
+	</div>
+</section>

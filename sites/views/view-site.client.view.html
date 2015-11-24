@@ -1,0 +1,16 @@
+<!-- The article view -->
+<section data-ng-controller="SitesController" data-ng-init="findOne()">
+    <h1 data-ng-bind="site.name"></h1>
+    <!-- Show the editing buttons to the company creator -->
+    <div data-ng-show="authentication.user._id == site.creator._id">
+        <a href="/#!/sites/{{site._id}}/edit">edit</a>
+        <a href="#" data-ng-click="delete();">delete</a>
+    </div>
+    <small>
+        <em>Posted on</em>
+        <em data-ng-bind="site.created | date:'mediumDate'"></em>
+        <em>by</em>
+        <em data-ng-bind="site.creator.fullName"></em>
+    </small>
+    <p data-ng-bind="site.name"></p>
+</section>

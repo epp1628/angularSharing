@@ -1,0 +1,34 @@
+<!-- The create company view -->
+<section data-ng-controller="SitesController">
+	<h1>New site</h1>
+    <!-- The error message element   -->
+		<div data-ng-show="error">
+			<strong data-ng-bind="error"></strong>
+		</div>
+	<!-- The new company form -->
+	<form data-ng-submit="create()" novalidate>
+		<div>
+			<label for="name">Site name</label>
+			<div>
+				<input type="name" data-ng-model="name" id="name" placeholder="Site Name" required>
+			</div>
+            <label for="street">Street</label>
+			<div>
+				<input type="street" data-ng-model="street" id="name" placeholder="Street" required>
+			</div>
+              <label for="companies">Companies Available</label>
+            <ul>
+                <li ng-repeat="x in Mycompanies">
+                    {{ x.company_name + ', ' + x.creator }}
+                </li>
+            </ul>
+            
+            <label>Enabled:   </label>
+                <input type="checkbox" ng-model="enabled">        
+		</div>
+		<div>
+			<input type="submit">
+		</div>
+		
+	</form>
+</section>

@@ -1,0 +1,53 @@
+<!-- The create company view -->
+<section data-ng-controller="CompaniesController">
+	<h1>New Company</h1>
+    <!-- The error message element -->
+		<div data-ng-show="error">
+			<strong data-ng-bind="error"></strong>
+		</div>
+	<!-- The new company form -->
+	<form data-ng-submit="create()" novalidate>
+		<div>
+			<label for="title">Company name</label>
+			<div>
+				<input type="text" data-ng-model="company_name" id="company_name" placeholder="Company Name" required>
+			</div>
+		</div>
+        <div>
+			<label for="tin">Tin Number</label>
+			<div>
+				<input type="text" data-ng-model="tin" id="tin" placeholder="Tin Number" required>
+			</div>
+		</div>
+        <div>
+			<label for="google_plus_url">Google Plus url</label>
+			<div>
+				<input type="text" data-ng-model="google_plus_url" id="google_plus_url" placeholder="Google Plus Url">
+			</div>
+		</div>
+        <div>
+			<label for="facebook_url">Facebook Url</label>
+			<div>
+				<input type="text" data-ng-model="facebook_url" id="facebook_url" placeholder="Facebook Url">
+			</div>
+		</div>
+        <div>
+			<label for="twitter_url">Twitter Url</label>
+			<div>
+				<input type="text" data-ng-model="twitter_url" id="twitter_url" placeholder="twitter url">
+			</div>
+		</div>
+        <div>
+			<label for="youtube_url">Youtube Url</label>
+			<div>
+				<input type="text" data-ng-model="youtube_url" id="youtube_url" placeholder="Youtube url">
+			</div>
+		</div>
+        
+		
+		<div>
+			<input type="submit">
+		</div>
+		
+	</form>
+</section>
